@@ -1,0 +1,44 @@
+<template name="Bill">
+  <legend><h3>Invoice</h3></legend>
+  <div class="form-group">
+    <label for="date">{{currentDate}}</label>
+  </div>
+  <div class="form-group">
+    <label for="name">Customer Name</label>
+    <select name="name" id="name" class="form-control">
+      <option value="">Choose Customer</option>
+      {{#each customers}}
+        <option value="{{_id}}">{{firstName}} {{lastName}}</option>
+      {{/each}}
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="address">Address</label>
+    <textarea name="address" id="address" class="form-control" rows="5" disabled></textarea>
+  </div>
+  <div>
+    <table class="table table-striped table-hover">
+      <tbody>
+        {{> BillDetail index=1}}
+      </tbody>
+      <tfoot>
+        <tr>
+          <td></td><td></td><td></td><td></td>
+          <td>Tax</td>
+          <td class="pull-right">
+            <input type="number" class="form-control pull-right tax" placeholder="Tax" value="12.30" readonly="readonly">
+          </td>
+        </tr>
+        <tr>
+          <td></td><td></td><td></td><td></td>
+          <td>Total Amount</td>
+          <td class="pull-right">
+            <input type="number" class="form-control pull-right totalamount" placeholder="Total Amount" readonly="readonly">
+          </td>
+        </tr>
+      </tfoot>
+    </table>
+
+    <button type="button" class="btn btn-primary save-print">Save &amp; Print</button>
+  </div>
+</template>

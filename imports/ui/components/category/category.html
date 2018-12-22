@@ -1,0 +1,18 @@
+<template name="Category">
+	<div class="panel panel-success">
+		<div class="panel-heading">
+			<h3 class="panel-title">
+				{{name}}
+				<span class="buttons">
+					<i class="fa fa-times delete-category pull-right"></i>
+					<a href="{{pathFor '/category/:id' id=_id}}">
+						<i class="fa fa-pencil edit-category pull-right"></i>
+					</a>
+				</span>
+			</h3>
+		</div>
+		<div class="panel-body">
+			{{description}}
+		</div>
+	</div>
+</template>

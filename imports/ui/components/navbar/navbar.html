@@ -1,0 +1,103 @@
+<template name="Navbar">
+    <nav class="navbar navbar-default navbar-static-top">
+        <div class="container">
+            <div class="navbar-header">
+                <!-- Collapsed Hamburger -->
+                <button class="navbar-toggle collapsed" data-target="#app-navbar-collapse" data-toggle="collapse" type="button">
+                    <span class="sr-only">
+                        Toggle Navigation
+                    </span>
+                    <span class="icon-bar">
+                    </span>
+                    <span class="icon-bar">
+                    </span>
+                    <span class="icon-bar">
+                    </span>
+                </button>
+                <!-- Branding Image -->
+                <a class="navbar-brand" href="{{pathFor 'home'}}">
+                    Jadoo
+                </a>
+            </div>
+            <div class="collapse navbar-collapse" id="app-navbar-collapse">
+                <!-- Left Side Of Navbar -->
+                {{#if currentUser}}
+                <ul class="nav navbar-nav">
+                	<li>
+                		<a href="{{pathFor 'addCategory'}}">Category</a>
+                	</li>
+                  <li>
+                		<a href="{{pathFor 'addCustomer'}}">Customer</a>
+                	</li>
+                  <li>
+                		<a href="{{pathFor 'addVendor'}}">Vendor</a>
+                	</li>
+                  <li>
+                		<a href="{{pathFor 'addProduct'}}">Product</a>
+                	</li>
+                	<li class="dropdown">
+                        <a aria-expanded="false" class="dropdown-toggle" data-toggle="dropdown" href="#" role="button">
+                            Reports
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li>
+                                <a href="{{pathFor 'categories'}}" class="categories">
+                                    Categories
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{pathFor 'customers'}}" class="customers">
+                                    Customers
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{pathFor 'vendors'}}" class="vendors">
+                                    Vendors
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{pathFor 'products'}}" class="products">
+                                    Products
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                {{/if}}
+                <!-- Right Side Of Navbar -->
+                <ul class="nav navbar-nav navbar-right">
+                    <!-- Authentication Links -->
+                    {{#if currentUser}}
+                    <li class="dropdown">
+                        <a aria-expanded="false" class="dropdown-toggle" data-toggle="dropdown" href="#" role="button">
+                            {{currentUserEmail}}
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li>
+                                <a href="#" class="logout">
+                                    Logout
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    {{else}}
+                    <li>
+                        <a href="{{pathFor 'login'}}">
+                            Login
+                        </a>
+                    </li>
+                    {{#if hasUser}}
+                    <li>
+                        <a href="{{pathFor 'register'}}">
+                            Register
+                        </a>
+                    </li>
+                    {{/if}}
+                    {{/if}}
+                </ul>
+            </div>
+        </div>
+    </nav>
+</template>

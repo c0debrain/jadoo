@@ -1,0 +1,57 @@
+<template name="Login">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="alert alert-danger">
+                    <button aria-hidden="true" class="close" data-dismiss="alert" type="button">×</button>
+                    <strong>Error</strong>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        Login
+                    </div>
+                    <div class="panel-body">
+                        <form class="form-horizontal" method="POST" role="form">
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="email">
+                                    E-Mail Address
+                                </label>
+                                <div class="col-md-6">
+                                    <input autofocus="" class="form-control" id="email" name="email" required="" type="email"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="password">
+                                    Password
+                                </label>
+                                <div class="col-md-6">
+                                    <input class="form-control" id="password" name="password" required="" type="password"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-6 col-md-offset-4">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input name="remember" type="checkbox"/>
+                                            Remember Me
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-8 col-md-offset-4">
+                                    <button class="btn btn-primary" type="submit">
+                                        Login
+                                    </button>
+                                    <a class="btn btn-link" href="#">
+                                        Forgot Your Password?
+                                    </a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

@@ -1,0 +1,19 @@
+<template name="Customer">
+	<div class="panel panel-success">
+		<div class="panel-heading">
+			<h3 class="panel-title">
+				{{firstName}} {{lastName}}
+				<span class="buttons">
+					<i class="fa fa-times delete-customer pull-right"></i>
+					<a href="{{pathFor '/customer/:id' id=_id}}">
+						<i class="fa fa-pencil edit-customer pull-right"></i>
+					</a>
+				</span>
+			</h3>
+		</div>
+		<div class="panel-body">
+			<p>{{address}}</p>
+			<p>{{city}}{{#if pincode }} - {{pincode}}{{/if}}{{#if state}}, {{state}}{{/if}}</p>
+		</div>
+	</div>
+</template>

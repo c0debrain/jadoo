@@ -1,0 +1,11 @@
+import '../../api/categories/methods';
+import '../../api/categories/server/publications';
+import '../../api/products/methods';
+import '../../api/products/server/publications';
+import '../../api/vendors/methods';
+import '../../api/vendors/server/publications';
+import '../../api/customers/methods';
+import '../../api/customers/server/publications';
+import '../../api/bills/methods';
+import '../../api/bills/server/publications';
+import '../../api/users/methods';

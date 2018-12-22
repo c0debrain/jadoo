@@ -1,0 +1,31 @@
+<template name="BillDetail">
+  <tr>
+    <td>
+      <input type="text" class="form-control index" value="{{index}}" readonly="readonly">
+    </td>
+    <td>
+      <select class="form-control product">
+          <option value="" selected>Choose Product...</option>
+        {{#each products}}
+          <option value="{{_id}}">{{name}}</option>
+        {{/each}}
+      </select>
+    </td>
+    <td class="values">
+      <input type="number" class="form-control unitprice" readonly="readonly">
+    </td>
+    <td class="values">
+      <input type="number" class="form-control quantity">
+    </td>
+    <td class="values">
+      <input type="number" class="form-control pull-right discount" value="0" placeholder="Discount">
+    </td>
+    <td>
+      <input type="number" class="form-control pull-right amount" placeholder="Amount" readonly="readonly">
+      <span class="pull-right">(<em>Select and Press enter in amount box to add new Bill Item</em>)</span>
+    </td>
+    <td>
+      <i class="fa fa-times" style="cursor:pointer"></i>
+    </td>
+  </tr>
+</template>
